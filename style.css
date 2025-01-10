@@ -1,0 +1,343 @@
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    margin: 0;
+  }
+.errortext{
+  width:50%;
+  margin:auto;
+  padding: 12px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+
+}
+.topBar{
+    padding: 50px 16px;
+    overflow: hidden;
+    background-color: #3333;
+    outline: 10px black ;
+    
+}
+.topBar .search{
+  float:right;
+   outline:none;
+   background-color: transparent;
+   border:none;
+   cursor: pointer;
+   width:200px;
+   height:10px
+}
+.topBar .search img{
+  width:20%;
+}
+.topBar .navigation img{
+  width:20%;
+
+}
+.topBar .navigation{
+  float:left;
+   outline:none;
+   background-color: transparent;
+   border:none;
+   cursor: pointer;
+   width:200px;
+   height:10px
+}
+#taskbar {
+    height: 100%;
+    width: 10%;
+    position: fixed;
+    position: absolute;
+    background: grey;     
+    left: 0;
+    top: 0;
+    padding-top: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 130%;
+}
+#taskbar a, a:link, a:visited{
+  color:inherit;
+  text-decoration:none;
+}
+#search{
+  background-color: black;
+  outline: 10px black;
+  padding:1%;
+}
+#search form input{
+  padding: 12px 16px;
+  overflow: hidden;
+  background-color: grey;
+  outline: 10px black ;
+  width:50%;
+  margin:auto;
+  padding: 12px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  background-image: url('Icons/search.svg');
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  position: absolute;
+  top: 100px;
+  right: 25%;
+  
+}
+#search input[type=submit]{
+  width: 25%;
+  margin: auto;
+    margin-right: auto;
+    margin-left: auto;
+  padding: 12px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: absolute;
+  top: 148px;
+  right: 38%;
+  background-image: none;
+} 
+.productDisplay img{
+  width:100%
+}
+.productDisplay{
+  background-color:dimgrey;
+  width:20%;
+  margin:50px;
+  float:left;
+  padding: 5px;
+  cursor:pointer;
+  border-style: solid;
+  border-width:thin;
+  border-color:black;
+  position:relative;
+  font-size:150%;
+  color:white;
+  line-height: 10px;
+  object-fit: cover;
+  border: 4px solid black;
+}
+.productDisplay button{
+  color:black;
+  background: #3bc47f;
+  width:100%;
+  height:50px;
+  font-size: 100%;
+  background-image: url('Icons/basket.svg');
+  background-repeat: no-repeat;
+  background-size: 5%;
+  background-position: 0% 50%;
+  font-weight:bold;
+  background-position: center center;
+}
+
+.productDisplay .name{
+  margin:5px;
+  padding: 12px;
+  font-weight: bold;
+}
+.productDisplay .price{
+  width:50%;
+  margin:auto;
+  padding: 12px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  font-weight: bold;
+  color:black;
+}
+#basket{
+  height: 100px;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background:none;
+
+}
+#basket button{
+  border-radius: 50%;
+  height:100%;
+  width:300%;
+  background-color: #29add6;
+  transition: none;
+  border: 2px solid black;
+}
+#basket button:hover{
+  cursor:pointer;
+}
+#basket button:active{
+  border-radius: 50%;
+  height:100%;
+  width:300%;
+  background-color: #289fd7;
+  transition: none;
+  border: 2px solid black;
+}
+#productPage .productBasket{
+color: black;
+  background: #3bc47f;
+  width: 25%;
+  height: 10%;
+  font-size: 100%;
+  background-image: url('Icons/basket.svg');
+  background-repeat: no-repeat;
+  background-size: 5%;
+  background-position: 0% 50%;
+  font-weight: bold;
+  background-position: center center;
+  float: right;
+  position: absolute;
+  font-size: 250%;
+  font-weight: bold;
+  margin: 31%;
+  height: 60px;
+  position: absolute;
+  left: 37%;
+
+}
+#productPage .goBack{
+  color:black;
+  background: #C2403D;
+  width:10%;
+  height:30px;
+  font-size: 100%;
+  background-image: url('Icons/');
+  background-repeat: no-repeat;
+  background-size: 10%;
+  background-position: 0% 50%;
+  font-weight:bold;
+  background-position: center center;
+  position:absolute;
+  left:0%;
+}
+#productPage p{
+  font-size: 250%;
+  font-weight: bold;
+  margin:5%;
+  height: 100px;
+  position: absolute;
+  right: 6%;
+  
+}
+#displayIMG{
+  border-radius: 25%;
+  border: 10px solid black;
+  position: relative;
+  float: left;
+  left: 10%;
+  width: 40%;
+}
+
+#filter{
+  float:left;
+  position:fixed;
+  background-color: #7D8282;
+  width:6%;
+  height:30%;
+  font-weight: bold;
+  border: 2px solid black;
+
+}
+#filter label{
+  margin:10px;
+  bottom:50%;
+  color: white;
+  width:50%;
+  
+}
+.basketDisplay{
+  float:left;
+  margin-right:5px;
+  background-color:dimgrey;
+  padding:10px;
+  cursor:pointer;
+  border-style: solid;
+  border-width:thin;
+  border-color:black;
+  font-size:150%;
+  color:white;
+  line-height: 10px;
+  object-fit: cover;
+  border: 2px solid black;
+  width:50%;
+  
+}
+.basketDisplay img{
+  width:20%;
+}
+.basketDisplay .name{
+  margin:5px;
+
+  font-weight: bold; 
+  text-align: center;
+  
+  
+}
+.basketDisplay .price{
+  float:right;
+  position:relative;
+  color:white;
+  font-weight: bold;
+}
+#ClearFilter{
+  position:relative;
+  width:100%;
+
+}
+#checkout p{
+  width:25%;
+  height:50px;
+  position: absolute;
+  bottom: 6%;
+  right: 5%;
+  font-size: 50px;
+}
+#checkout button{
+  width:25%;
+  height:50px;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  background:none;
+  background-color: #5884a7;
+
+}
+#bestsellers h2{
+  position: absolute;
+  padding: 20%;
+  left: -18%;
+}
+#bestsellingProducts{
+  background-color: dimgrey;
+  cursor: pointer;
+  border: 4px solid black;
+  left: 2%;
+  bottom: -573px;
+  color: #010100;
+  font-size: 115%;
+  float: left;
+  position: relative;
+  font-weight: bold;
+}
+#bestsellingProducts img{
+  width: 100%;
+}
+#bestsellingProducts button{
+  width:100%;
+  height:50px;
+  background-color: #289fd7;
+}
+#soleMate{
+  padding: 10%;
+  position: relative;
+  font-size: 215%;
+  text-align: center;
+  right: 25%;
+
+}
