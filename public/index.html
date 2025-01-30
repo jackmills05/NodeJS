@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SoleMate</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="script.js"></script>
+    <script type="module" src="./script.js"></script>
+  </head> 
+  <body onload="loadBasket(), loadMain()">
+    <main>
+    <!-- Start of code for navigation and taskbar -->
+    <div class="topBar">  
+      <button onclick="navigationBar()" class="navigation"><img src="Icons/menu.svg", draggable="false"></button>
+       <button onclick="searchFunction()", class="search"><img src="Icons/search.svg", draggable="false"></button>      
+    </div>
+    <div id="searchBar"></div>
+    <div id="navBar"></div>
+    <div id="basket"></div> <!-- End of code for navigation and taskbar -->
+    <div id="bestsellers" draggable="false"><h2>Best Sellers</h2></div>
+
+
+    <h1 id="soleMate">SoleMate</h1>
+    </main>
+  
+  
+  </body>
+
+
+</html>

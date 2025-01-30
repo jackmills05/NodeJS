@@ -1,0 +1,20 @@
+[
+    {
+      "productName": "Shoe1",
+      "price": 29,
+      "productImage": "",
+      "keyWords": ["Radiation resistance", 
+      "Turning tiny", 
+      "Radiation blast"]
+    },
+    {
+      "productName": "Shoe2",
+      "price": 39,
+      "productImage": "",
+      "keyWords": [
+        "Million tonne punch",
+        "Damprice resistance",
+        "Superhuman reflexes"
+      ]
+    }
+  ]

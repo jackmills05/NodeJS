@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SoleMate</title>
-    <link type="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="script.js"></script>
     <script type="module" src="./script.js"></script>
   </head> 
-  <body onload="loadBasket(), loadMain()">
+  <body onload="displayBasket(), displayCheckout()">
     <main>
     <!-- Start of code for navigation and taskbar -->
     <div class="topBar">  
@@ -18,11 +18,10 @@
     </div>
     <div id="searchBar"></div>
     <div id="navBar"></div>
-    <div id="basket"></div> <!-- End of code for navigation and taskbar -->
-    <div id="bestsellers" draggable="false"><h2>Best Sellers</h2></div>
-
-
-    <h1 id="soleMate">SoleMate</h1>
+    <div id="displayBasket"></div>
+    <div id="checkout"></div>
+     <!-- End of code for navigation and taskbar -->
+    
     </main>
   
   
