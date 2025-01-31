@@ -8,16 +8,17 @@ app.use(express.static(__dirname + "/public"));
 const { MongoClient } = require("mongodb");
 const uri= "mongodb+srv://jackmills200503:jackmills@neaproject.e9kaj.mongodb.net/?retryWrites=true&w=majority&appName=NEAProject"
 const client = new MongoClient(uri);
+
 async function run() {
   try {
-    const database = client.db('products');
-    const products = database.collection('Shoes');
-    // Query for a movie that has the title 'Back to the Future'
-    const query = { title: 'Back to the Future' };
-    const productsOutput = await movies.findOne();
-    console.log(productsOutput);
+    await client.connect();
+    const database = client.db("Products")
+    const shoes = database.collection("Shoes")
+    const search = db.shoes.stats()
+    console.log(search)
+
   } finally {
-    // Ensures that the client will close when you finish/error
+
     await client.close();
   }
 }
