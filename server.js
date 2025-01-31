@@ -2,22 +2,22 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 const path = require("path")
-const hello = require("./public/script");
 const { db } = require('mongodb');
 app.use(express.static(__dirname + "/public"));
 const { MongoClient } = require("mongodb");
 const uri= "mongodb+srv://jackmills200503:jackmills@neaproject.e9kaj.mongodb.net/?retryWrites=true&w=majority&appName=NEAProject"
 const client = new MongoClient(uri);
-
+const database = client.db("Products")
+const shoes = database.collection("Shoes")
+let products = []
 async function run() {
   try {
     await client.connect();
-    const database = client.db("Products")
-    const shoes = database.collection("Shoes")
-    const search = db.shoes.stats()
-    console.log(search)
+    let products = shoes.find({}).toArray().then(function(result){
+      console.log(JSON.stringify(result))
+    })
 
-  } finally {
+  } catch {
 
     await client.close();
   }
@@ -42,11 +42,16 @@ app.get('/products/:id', function(req,res){
   res.send("ID:" + req.params.id);
 });
 app.get('*', function(req, res){
-  res.send("Invalid URL.");
+  try {
+    client.connect();
+   let products = shoes.find({}).toArray().then(function(result){
+     res.send((result))
+   })
+   
+ } catch {
+
+    client.close();
+ }
 })
-function testfunc(){
-  console.log("test")
-  hello()
-}
-testfunc()
+
 app.listen(3000)
