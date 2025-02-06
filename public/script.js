@@ -59,7 +59,6 @@ function loadMain() {
 }
 function displayProducts() {
     const element = document.getElementById('products')
-
     for (var i = 0; i < products.length; i++) {
         var productHTML = `<div class="productDisplay" value="` + [i] + `"><a onclick="productNavigation(` + [i] + `)"><img src="` + products[i].productImage + `"><br><p class="name">` + products[i].brand + ` ` + products[i].productName + `</p><p class="price"><br>£` + products[i].price + `</p><a/> <button onClick="addToBasket(` + [i] + `)"></button></div>`
         element.insertAdjacentHTML("afterbegin", productHTML);
@@ -125,7 +124,7 @@ function clearFilter() {
 }
 function loadBasket() {
     var element = document.getElementById('basket')
-    element.innerHTML = `<a href="/basket"><button draggable="false"><img src="icons/basketCheckout.svg"></button></a>`
+    element.innerHTML = `<a href="/basket"><button draggable="false"><img src="/icons/basketCheckout.svg"></button></a>`
     document.body.appendChild(element)
 }
 function filterSystem() {
@@ -161,7 +160,7 @@ function displayBasket() {
     else{
     for (var i = 0; i < JSON.parse(localStorage.getItem("basket")).length; i++) {
         console.log(basket)
-        var basketHTML = `<div class="basketDisplay" value="` + basket[i] + `"><a onclick="productNavigation(` + basket[i] + `)"><img src="` + products[basket[i]].productImage + `"draggable="false"><br><p class="name" draggable="false">` + products[basket[i]].brand + ` ` + products[basket[i]].productName + `</p><br><p class="price">£` + products[basket[i]].price + `</p><a/> <button onclick=removeFromBasket(` + [i] + `)>Test<img href="Icons/delete.svg)</button></div>`
+        var basketHTML = `<div class="basketDisplay" value="` + basket[i] + `"><a onclick="productNavigation(` + basket[i] + `)"><img src="` + products[basket[i]].productImage + `"draggable="false"><br><p class="name" draggable="false">` + products[basket[i]].brand + ` ` + products[basket[i]].productName + `</p><br><p class="price">£` + products[basket[i]].price + `</p><a/> <button onclick=removeFromBasket(` + [i] + `)>Test<img href="/Icons/delete.svg)</button></div>`
         element.insertAdjacentHTML("afterbegin", basketHTML);
     }
     }
@@ -201,13 +200,23 @@ async function getData() {
       if (!response.ok) {
         throw new Error(`Response status: ${response.status}`);
       }
-  
       const json = await response.json();
       console.log(json);
-      var items = (json);
-      for (var i = 0; i == ("json").length; i++){
-      products.push(json[i]);
-      console.log(items[1])
+      console.log(json.length)
+      for (var i = 0; i < json.length; i++) {
+        products.push(json[i]);
+      }
+      if (document.body.contains(document.getElementById('products'))){ 
+        displayProducts()
+        loadBasket()
+    }
+      if (document.body.contains(document.getElementById('bestsellers'))){ 
+        loadMain()
+        loadBasket()
+      }
+      if (document.body.contains(document.getElementById('checkout'))){ 
+        displayBasket()
+        displayCheckout()
       }
     } catch (error) {
       console.error(error.message);
