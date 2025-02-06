@@ -1,53 +1,5 @@
 
-var products = [
-    {
-        "productName": "Air Max 95",
-        "price": 145,
-        "productImage": "productIMG/Shoe1.jpg",
-        "brand": "Nike",
-        "keyWords": ["BestSeller",
-            "Turning tiny",
-            "Radiation blast"]
-    },
-    {
-        "productName": "Classic Clog",
-        "price": 39,
-        "productImage": "productIMG/Shoe2.jpg",
-        "brand": "Crocs",
-        "keyWords": [
-            "Million tonne punch",
-            "Damprice resistance",
-            "Superhuman reflexes"
-        ]
-    },
-    {
-        "productName": "Campus",
-        "price": 115,
-        "productImage": "productIMG/Shoe3.jpg",
-        "brand": "Adidas",
-        "keyWords": ["bestsellers",
-            "Turning tiny",
-            "Radiation blast"]
-    },
-    {
-        "productName": "Pegasus 41",
-        "price": 145,
-        "productImage": "productIMG/Shoe4.jpg",
-        "brand": "Nike",
-        "keyWords": ["Radiation resistance",
-            "Turning tiny",
-            "Radiation blast"]
-    },
-    {
-        "productName": "Dunk Low 1",
-        "price": 70,
-        "productImage": "productIMG/Shoe5.jpg",
-        "brand": "Nike",
-        "keyWords": ["bestsellers",
-            "Turning tiny",
-            "Radiation blast"]
-    },
-]
+var products = []
 
 let navigationActive = false
 function navigationBar() {
@@ -252,6 +204,11 @@ async function getData() {
   
       const json = await response.json();
       console.log(json);
+      var items = (json);
+      for (var i = 0; i == ("json").length; i++){
+      products.push(json[i]);
+      console.log(items[1])
+      }
     } catch (error) {
       console.error(error.message);
     }
