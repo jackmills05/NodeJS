@@ -9,7 +9,6 @@ const uri= "mongodb+srv://jackmills200503:jackmills@neaproject.e9kaj.mongodb.net
 const client = new MongoClient(uri);
 const database = client.db("Products")
 const shoes = database.collection("Shoes")
-let products = []
 async function run() {
   try {
     await client.connect();
